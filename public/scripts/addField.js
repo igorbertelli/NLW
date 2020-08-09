@@ -1,6 +1,6 @@
 document.querySelector("#add-time").addEventListener("click", cloneField);
 
-function cloneField() {
+function cloneField(e) {
   const newFieldContainer = document
     .querySelector(".schedule-item")
     .cloneNode(true);

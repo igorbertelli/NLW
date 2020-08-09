@@ -30,7 +30,7 @@
       </header>
 
       <main>
-        <form action="" id="create-class">
+        <form action="/save-classes" id="create-class" method="POST">
           <fieldset>
             <legend>Seus dados</legend>
 
@@ -40,17 +40,17 @@
             </div>
 
             <div class="input-block">
-              <label for="avatar"
-                >Link da sua foto <small>(comece com https://)</small></label
-              >
+              <label for="avatar">
+                Link da sua foto <small>(comece com https://)</small>
+              </label>
               <input name="avatar" id="avatar" type="url" />
             </div>
 
             <div class="input-block">
-              <label for="whatsapp"
-                >Whatsapp <small>(somente números)</small></label
-              >
-              <input name="whatsapp" id="whatsapp" type="number" required />
+              <label for="whatsapp">
+                Whatsapp <small>(somente números)</small>
+              </label>
+              <input name="whatsapp" id="whatsapp" type="phone" required />
             </div>
 
             <div class="textarea-block">
@@ -63,11 +63,11 @@
             <legend>Sobre a aula</legend>
             <div class="select-block">
               <label for="subject">Matéria</label>
-              <select name="subjetc" id="subject" required>
+              <select name="subject" id="subject" required>
                 <option value="">Selecione uma opção</option>
-                {%for subject in subjects %}
-                <option value="{{loop.index}}"> {{subject}}</option>
-                {%endfor%}
+                {% for subject in subjects %}
+                <option value="{{ loop.index }}"> {{ subject }}</option>
+                {% endfor %}
               </select>
             </div>
 
@@ -83,7 +83,7 @@
           <fieldset id="schedule-items">
             <legend>
               Horários disponíveis
-              <button type="button" id="add-time">+ Novo horário</button>
+              <button id="add-time">+ Novo horário</button>
             </legend>
 
             <div class="schedule-item">
@@ -120,4 +120,6 @@
       </main>
     </div>
   </body>
+
+  <script src="/scripts/addField.js"></script>
 </html>
